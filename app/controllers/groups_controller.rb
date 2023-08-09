@@ -4,8 +4,11 @@ class GroupsController < ApplicationController
     def index
       @groups = Group.includes(:author).where(author_id: current_user.id)
     end
-
     
+    def show
+        @group = Group.includes(:operations).find(params[:id])
+      end
+
     def new
         @current_user = current_user
         @group = Group.new
