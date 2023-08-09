@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'forms' %>
+<%= stylesheet_link_tag 'font_awesome', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="form-container">
+
+<%= form_with(class: "forms", model: [current_user, Group.new], url: user_groups_path(current_user), local: true) do |form| %>
+  
+  <div class="field icon-input">
+    
+    <% GroupIconOptions::ICON_OPTIONS.each do |icon| %>
+      <%= form.radio_button :icon, icon %>
+      <%= image_tag "group_icons/#{icon}", class: "icon-image" %>
+    <% end %>
+  </div>
+
+  <div class="field name">
+    <%= form.text_field :name, placeholder: "name ", class: "form-input" %>
+  </div>
+
+  <%= form.submit 'Save', class: 'btn-form' %>
+<% end %>
+
+<%= link_to user_groups_path(current_user), method: :get, class: 'back-button' do %>
+  <i class='fas fa-arrow-left'></i> 
+<% end %>
+
+
+
+</div>
