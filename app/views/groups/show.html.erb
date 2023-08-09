@@ -1,0 +1,25 @@
+<%= render partial: 'shared/navbar' %>
+
+<h1>Transactions</h1>
+
+<h2><%= @group.name %></h2>
+
+<p> $<%= @group.sum_amount() %> </p>
+
+<% if @group.operations.any? %>
+  <% @group.recent_operations().each do |operation| %>
+    <div class="transaction">
+      <p class="transaction-name"><%= operation.name %></p>
+      <p class="transaction-amount"><%= operation.amount %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are no transactions yet.</p>
+<% end %>
+
+<div class="add-transaction-btn">
+  <div class="center">
+    <%= link_to "Add new transaction", new_user_group_operation_path(current_user, @group), class: "transaction-indx-add" %>
+</div>
+
+<%= button_to "back", user_groups_path(current_user), :method => :get %>
