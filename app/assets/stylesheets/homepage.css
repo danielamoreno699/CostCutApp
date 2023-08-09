@@ -46,7 +46,12 @@ body{
 }
 
 .h1-logo{
-    font-family: 'Hundergad';
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 4rem;
+    color: #336699;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+  
 }
 
 .nav-ul{
