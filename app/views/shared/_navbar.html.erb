@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'navbar' %>
+
+<div class="navbar-cont">
+  <div class="logo-app">
+    <%= image_tag "default.png", alt: "App Logo", class: "img-log" %>
+  </div>
+    
+  <div class="nav">
+    <ul class="nav-ul-cont">
+        <li class="nav-li-cont">  recent </li>
+        <li class="nav-li-cont"> ancient </li>
+      <li class="nav-li-cont">
+        <div id="sign_out">
+          <% if user_signed_in? %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
