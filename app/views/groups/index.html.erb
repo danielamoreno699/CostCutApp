@@ -1,21 +1,34 @@
 <!-- app/views/home/index.html.erb -->
- <%= stylesheet_link_tag 'homepage' %>
+ <%= stylesheet_link_tag 'category' %>
 
- <div class="home-page-container pattern-top">
- <div class="bg"></div>
+ <%= render partial: 'shared/navbar' %>
 
-<div class= "account-container">
-<div class="logo">
- <h1 class="h1-logo"> cost app food </h1>
+<%= render_flash_messages %>
+
+
+
+<div class="groups-index">
+<% if @groups.any? %>
+  <% @groups.each do |group| %>
+    <div class="group">
+    <%= link_to user_group_path(user_id: group.author, id: group) do %>
+        <%= image_tag "group_icons/#{group.icon}", class: "icon-image" %>
+    <% end %>
+      <%= link_to group.name, user_group_path(user_id: group.author, id: group) %>
+      <p class="amount"> $ <%= group.sum_amount() %> </p>
+
+    </div>
+  <% end %>
+<% else %>
+  <p>There are no groups yet.</p>
+<% end %>
+
+<div class="add-group-btn">
+<div class="center">
+<%= link_to "Add new group", new_user_group_path(current_user), class: "group-indx-add" %>
+</div>
 </div>
 
-<div class="log-account">
-  <ul class="nav-ul">
-    <%= link_to "Sign Up", new_user_registration_path, class: "nav-li sign-up-btn" %>
-    <%= link_to "Sign In", new_user_session_path, class: "nav-li" %>
-  </ul>
-</div>
 
 
-</div>
 </div>
