@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
     has_many :groups
     has_many :operations
+
+    validates :name, presence: true
+    validates :email, presence: true
+    validates :password, presence: true, length: { minimum: 6 }
+
 end
