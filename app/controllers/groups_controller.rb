@@ -4,4 +4,30 @@ class GroupsController < ApplicationController
     def index
       @groups = Group.includes(:author).where(author_id: current_user.id)
     end
+
+    
+    def new
+        @current_user = current_user
+        @group = Group.new
+      end
+    
+      def create
+        @current_user = current_user
+        @group = Group.new(group_params)
+        @group.author_id = @current_user.id
+    
+        if @group.save
+          flash[:success] = 'Category was successfully created.'
+          redirect_to user_groups_path(current_user), notice: 'Group was successfully created.'
+        else
+          flash.now[:alert] = 'Error: Category could not be created.'
+          render 'new'
+        end
+      end
+    
+      private 
+    
+      def group_params
+        params.require(:group).permit(:name, :icon)
+      end
 end
