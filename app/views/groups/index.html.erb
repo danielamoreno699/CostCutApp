@@ -1,34 +1,30 @@
-<!-- app/views/home/index.html.erb -->
- <%= stylesheet_link_tag 'category' %>
+<%= stylesheet_link_tag 'category' %>
 
- <%= render partial: 'shared/navbar' %>
+<%= render partial: 'shared/navbar' %>
 
 <%= render_flash_messages %>
 
-
-
 <div class="groups-index">
-<% if @groups.any? %>
-  <% @groups.each do |group| %>
-    <div class="group">
-    <%= link_to user_group_path(user_id: group.author, id: group) do %>
-        <%= image_tag "group_icons/#{group.icon}", class: "icon-image" %>
+  <% if @groups.any? %>
+    <% total_sum = @groups.map { |group| group.operations.sum(:amount) }.sum %>
+    <p class="total-sum"> Total Sum: <%= number_to_currency(total_sum) %> </p>
+    
+    <% @groups.each do |group| %>
+      <div class="group">
+        <%= link_to user_group_path(user_id: group.author, id: group) do %>
+          <%= image_tag "group_icons/#{group.icon}", class: "icon-image" %>
+        <% end %>
+        <%= link_to group.name, user_group_path(user_id: group.author, id: group) %>
+        <p class="amount"> $ <%= group.sum_amount() %> </p>
+      </div>
     <% end %>
-      <%= link_to group.name, user_group_path(user_id: group.author, id: group) %>
-      <p class="amount"> $ <%= group.sum_amount() %> </p>
-
-    </div>
+  <% else %>
+    <p>There are no groups yet.</p>
   <% end %>
-<% else %>
-  <p>There are no groups yet.</p>
-<% end %>
 
-<div class="add-group-btn">
-<div class="center">
-<%= link_to "Add new group", new_user_group_path(current_user), class: "group-indx-add" %>
-</div>
-</div>
-
-
-
+  <div class="add-group-btn">
+    <div class="center">
+      <%= link_to "Add new group", new_user_group_path(current_user), class: "group-indx-add" %>
+    </div>
+  </div>
 </div>
