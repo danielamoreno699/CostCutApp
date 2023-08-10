@@ -11,6 +11,12 @@ class GroupsController < ApplicationController
         @group = Group.includes(:operations).find(params[:id])
       end
 
+    def destroy
+      @group = Group.includes(:operations).find(params[:id])
+        @group.destroy
+        redirect_to user_group_path(current_user, @group.id)
+      end
+
     def new
         @current_user = current_user
         @group = Group.new
