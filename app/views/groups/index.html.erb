@@ -7,14 +7,14 @@
 <div class="groups-index">
   <% if @groups.any? %>
     <% total_sum = @groups.map { |group| group.operations.sum(:amount) }.sum %>
-    <p class="total-sum"> Total Sum: <%= number_to_currency(total_sum) %> </p>
+    <p class="total-sum">  <%= number_to_currency(total_sum) %> </p>
     
     <% @groups.each do |group| %>
       <div class="group">
         <%= link_to user_group_path(user_id: group.author, id: group) do %>
           <%= image_tag "group_icons/#{group.icon}", class: "icon-image" %>
         <% end %>
-        <%= link_to group.name, user_group_path(user_id: group.author, id: group) %>
+        <%= link_to group.name, user_group_path(user_id: group.author, id: group), class: "group-link" %>
         <p class="amount"> $ <%= group.sum_amount() %> </p>
       </div>
     <% end %>

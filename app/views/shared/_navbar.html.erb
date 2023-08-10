@@ -7,8 +7,8 @@
     
   <div class="nav">
     <ul class="nav-ul-cont">
-        <li class="nav-li-cont">  recent </li>
-        <li class="nav-li-cont"> ancient </li>
+       
+        <li class="nav-li-cont"><%= @user.email %></li>
       <li class="nav-li-cont">
         <div id="sign_out">
           <% if user_signed_in? %>

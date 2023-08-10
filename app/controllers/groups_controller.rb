@@ -2,7 +2,9 @@ class GroupsController < ApplicationController
     include GroupIconOptions
 
     def index
+
       @groups = Group.includes(:author).where(author_id: current_user.id)
+      @user = current_user
     end
     
     def show
