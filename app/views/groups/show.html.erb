@@ -4,6 +4,8 @@
 
 <%= render partial: 'shared/navbar' %>
 
+<%= render_flash_messages %>
+
 <div class="header-transaction">
 
 <div class="h1-btn">
@@ -51,7 +53,7 @@
   </div>
   <% end %>
 <% else %>
-  <p>There are no transactions yet.</p>
+  <p class="no-transactions">There are no transactions yet.</p>
 <% end %>
 
 <div class="add-group-btn">

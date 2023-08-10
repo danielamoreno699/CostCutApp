@@ -82,3 +82,10 @@ hr {
   height: 2px; /* Set the height of the line */
   background-color: #3778c2; /* Set the color of the line */
 }
+
+.no-transactions{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}

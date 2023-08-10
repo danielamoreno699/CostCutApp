@@ -4,7 +4,7 @@ class OperationsController < ApplicationController
     @operation = @group.operations.find(params[:id])
     @operation.group_operations.destroy_all
     @operation.destroy
-    redirect_to user_group_path(current_user, @group_id)
+    redirect_to user_group_path(current_user, @group.id)
   end
 
   def new

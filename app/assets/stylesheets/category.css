@@ -1,29 +1,34 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .flash-success {
+  position: absolute;
+  width: 100%;
   background-color: #dff0d8;
   color: #3c763d;
   border: 1px solid #3c763d;
   padding: 10px;
   margin-bottom: 1rem;
-  opacity: 1;
-  animation: fadeOut 0.5s ease-in-out;
-}
-
-.flash-message.fade-out {
-  display: none;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards, fadeIn 0.5s ease-in-out 3s reverse forwards;
 }
 
 .flash-alert {
+  position: absolute;
   background-color: #f2dede;
   color: #a94442;
   border: 1px solid #a94442;
   padding: 10px;
-  animation: fadeOut 0.5s ease-in-out forwards;
   display: block;
 }
 
 .groups-index {
-  /* height: auto; */
   height: 100vh;
   background-color: #e5e8ef;
 }
@@ -88,7 +93,6 @@
 }
 
 .custom-link {
-  /* width: 10%; */
   width: 0;
   margin: 0;
   background-color: #a94442;
