@@ -73,3 +73,11 @@ body{
   .icon-input{
     padding: 1rem 2rem;
   }
+
+  .form-registration{
+    background-color: #3778c2;
+  }
+
+  .form-registration h2{
+    color: white;
+  }
