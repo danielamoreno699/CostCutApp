@@ -28,8 +28,8 @@
   }
 
   .groups-index{
-    height: auto;
-    /* height: 90vh; */
+    /* height: auto; */
+    height: 100vh;
     background-color: #e5e8ef;
   }
 
@@ -37,20 +37,29 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    background-color: white;
+    background-color: #fff;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 1rem;
     padding: 1rem;
+    width: 85%; 
+    margin-left: auto; 
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+   
 
   }
 
-  .icon-image {
-    width: 3rem; /* Adjust the desired width */
-    height: 3rem; /* Adjust the desired height */
-    
+  .total-sum{
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #fff;
+    margin-top: 0;
+    padding: 1rem;
+    text-align: right; 
   }
 
+ 
   .add-group-btn{
     background-color: #5fb523;
     color: white;
@@ -60,6 +69,12 @@
     padding: 2rem;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
    
   }
 
