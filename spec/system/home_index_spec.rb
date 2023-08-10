@@ -8,7 +8,7 @@ RSpec.describe 'Homepage', type: :system do
 
   it 'displays the app logo' do
     expect(page).to have_css('.logo')
-    expect(page).to have_content('cost app food')
+    expect(page).to have_content('Cost Cut App')
   end
 
   it 'displays sign up and sign in links' do
