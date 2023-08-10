@@ -20,14 +20,6 @@ class GroupsController < ApplicationController
         redirect_to user_groups_path(current_user)
       end
 
-      def edit
-        @current_user = current_user
-        @group = Group.find(params[:id])
-      end
-
-
-      
-
 
     def new
         @current_user = current_user

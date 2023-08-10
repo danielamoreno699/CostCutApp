@@ -111,3 +111,14 @@
   .amount{
     border: none
   }
+
+  .btn-delete{
+    background-color: #851605;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.5rem;
+   border-radius: 10px;
+
+  }
