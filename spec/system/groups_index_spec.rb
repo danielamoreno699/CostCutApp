@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Groups", type: :system do
+RSpec.describe 'Groups', type: :system do
   include Devise::Test::IntegrationHelpers
 
   before do
@@ -18,7 +18,6 @@ RSpec.describe "Groups", type: :system do
     end
 
     it 'displays "Add new group" link' do
-  
       visit user_groups_path(user_id: @user.id)
       expect(page).to have_text('Add new group')
     end
@@ -27,7 +26,5 @@ RSpec.describe "Groups", type: :system do
       visit user_groups_path(user_id: @user.id)
       expect(page).to have_css('.amount')
     end
-
-
   end
 end
