@@ -107,3 +107,7 @@
     margin: 0; 
     background-color: #a94442;
   }
+
+  .amount{
+    border: none
+  }

@@ -4,7 +4,7 @@ body{
 
 }
 
-.form-container{
+.form-container-group{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -55,12 +55,21 @@ body{
     padding: 1rem
   }
 
-  .back-button {
+ .back-button {
     display: flex;
     align-items: center;
-  }
+    justify-content: flex-end;
+    margin: 0;
+  } 
   
-  .back-button i {
-    margin-left: auto; 
+  .back-button svg {
+    /* margin-left: auto;  */
     width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    flex-direction: flex-end;
+  }
+
+  .icon-input{
+    padding: 1rem 2rem;
   }
