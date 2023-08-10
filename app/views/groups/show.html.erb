@@ -24,7 +24,7 @@
   
 <div class="wrap-name-icon">
 <h2><%= @group.name %></h2>
-<% if !Rails.env.test? && group.icon.present? %>
+<% if !Rails.env.test? && @group.icon.present? %>
 <%= image_tag "group_icons/#{@group.icon}", class: "icon-image-transaction", alt: 'logo' %>
 <% end %>
 </div>
@@ -44,6 +44,7 @@
     <p> <%= operation.created_at.strftime("%d %B %Y") %> </p>
       <p class="transaction-name"><%= operation.name %></p>
       <p class="transaction-amount"><%= operation.amount %>$</p>
+      <>
       
     </div>
   </div>
