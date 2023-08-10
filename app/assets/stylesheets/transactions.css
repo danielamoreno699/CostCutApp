@@ -89,3 +89,8 @@ hr {
     font-weight: bold;
     text-align: center;
 }
+
+.amount{
+    display: flex;
+    justify-content: flex-end;
+}
