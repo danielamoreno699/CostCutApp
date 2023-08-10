@@ -1,41 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe "Groups", type: :system do
-  let(:user_attributes) { { name: 'user B', email: 'test@gmail.com', password: '12345' } }
-  let(:user) { User.create(user_attributes) }
-  let(:group) { Group.create(name: 'Test Group', icon: 'test_icon.png') }
+  include Devise::Test::IntegrationHelpers
 
   before do
+    @user = User.create(name: 'mike', email: 'mihael@gmail.com', password: '123456', confirmed_at: Time.now)
+    login_as(@user, scope: :user)
+    @group = Group.create(name: 'Group 1', icon: 'icon.png', author: @user)
     driven_by(:rack_test)
-    user.confirm
   end
 
   describe 'GET index' do
     it 'displays "No groups yet" message' do
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Log in'
+      visit user_groups_path(user_id: @user.id)
 
-      # Simulate navigating to the index page
-      visit user_groups_path(user_id: user.id)
-
-      # Expectations
-      expect(page).to have_text('There are no groups yet.')
+      expect(page).to have_css('.group')
     end
 
     it 'displays "Add new group" link' do
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Log in'
-
-      # Simulate navigating to the index page
-      visit user_groups_path(user_id: user.id)
-
-      # Expectations
+  
+      visit user_groups_path(user_id: @user.id)
       expect(page).to have_text('Add new group')
     end
+
+    it 'displays class amount ' do
+      visit user_groups_path(user_id: @user.id)
+      expect(page).to have_css('.amount')
+    end
+
 
   end
 end

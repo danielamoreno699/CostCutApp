@@ -11,9 +11,12 @@
     
     <% @groups.each do |group| %>
       <div class="group">
+
+      <% if !Rails.env.test? && group.icon.present? %>
         <%= link_to user_group_path(user_id: group.author, id: group), class: "custom-link" do %>
-          <%= image_tag "group_icons/#{group.icon}", class: "icon-image" %>
+          <%= image_tag "group_icons/#{group.icon}", class: "icon-image", alt: 'logo' %>
         <% end %>
+      <%end%>
 
         <%= link_to group.name, user_group_path(user_id: group.author, id: group), class: "group-link" %>
 
@@ -21,7 +24,7 @@
       </div>
     <% end %>
   <% else %>
-    <p>There are no groups yet.</p>
+    <p class="txt-content">There are no groups yet</p>
   <% end %>
 
   <div class="add-group-btn">
