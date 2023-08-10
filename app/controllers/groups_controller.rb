@@ -4,18 +4,30 @@ class GroupsController < ApplicationController
     def index
 
       @groups = Group.includes(:author).where(author_id: current_user.id)
-      # @user = current_user
+      @current_user = current_user
     end
     
     def show
         @group = Group.includes(:operations).find(params[:id])
+        @current_user = current_user
       end
 
+
     def destroy
-      @group = Group.includes(:operations).find(params[:id])
+        @group = Group.find(params[:id])
+        @group.group_operations.destroy_all
         @group.destroy
-        redirect_to user_group_path(current_user, @group.id)
+        redirect_to user_groups_path(current_user)
       end
+
+      def edit
+        @current_user = current_user
+        @group = Group.find(params[:id])
+      end
+
+
+      
+
 
     def new
         @current_user = current_user

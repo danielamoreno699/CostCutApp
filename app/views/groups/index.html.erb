@@ -21,6 +21,7 @@
         <%= link_to group.name, user_group_path(user_id: group.author, id: group), class: "group-link" %>
 
         <p class="amount"> $ <%= group.sum_amount() %> </p>
+        <%= button_to "Delete", user_group_path(@current_user, group), method: :delete, class: "btn-delete" %>
       </div>
     <% end %>
   <% else %>

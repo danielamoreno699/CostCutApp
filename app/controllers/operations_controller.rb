@@ -1,4 +1,14 @@
 class OperationsController < ApplicationController
+
+  def destroy
+    @group =  Group.find(params[:group_id]) 
+      @operation = @group.operations.find(params[:id])  
+     @operation.group_operations.destroy_all
+      @operation.destroy
+      redirect_to user_group_path(current_user, @group_id)
+     
+    end
+
     def new
         @group = Group.find(params[:group_id])
         @operation = Operation.new

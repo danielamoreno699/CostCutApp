@@ -44,7 +44,8 @@
     <p> <%= operation.created_at.strftime("%d %B %Y") %> </p>
       <p class="transaction-name"><%= operation.name %></p>
       <p class="transaction-amount"><%= operation.amount %>$</p>
-      <%= button_to "Delete", user_group_path(operation), method: :delete, class: "btn-delete" %>
+      <%= button_to "Delete", user_group_operation_path(@current_user, @group.id, operation.id), method: :delete, class: "btn-delete" %>
+
       
     </div>
   </div>
