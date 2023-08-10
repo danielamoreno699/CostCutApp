@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
     def index
 
       @groups = Group.includes(:author).where(author_id: current_user.id)
-      @user = current_user
+      # @user = current_user
     end
     
     def show

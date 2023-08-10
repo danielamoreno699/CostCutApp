@@ -47,6 +47,7 @@
     margin-right: auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     border-radius: 10px;
+  
    
 
   }
@@ -92,8 +93,17 @@
 
   .group-link {
     font-family: 'Montserrat', sans-serif;
+    width: auto; 
+    margin: 0;
     /* Add your desired styles here */
     color: #104982; /* Change the color to your preferred color */
     text-decoration: none; /* Remove underline */
     font-weight: bold;
+  }
+
+  .custom-link{
+    /* width: 10%; */
+    width: 0;
+    margin: 0; 
+    background-color: #a94442;
   }
