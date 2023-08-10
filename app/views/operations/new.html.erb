@@ -1,3 +1,15 @@
+
+<%= stylesheet_link_tag 'forms' %>
+
+<div class="form-registration">
+
+
+
+<h2>Add new transaction</h2>
+
+<div class="form-cont">
+
+
 <%= form_with(model: [current_user, @group, Operation.new], url: user_group_operations_path(current_user, group_id: @group.id), data: { turbo: "false" }) do |form| %>
  
   
@@ -9,12 +21,18 @@
         <%= form.text_field :amount, placeholder: "amount", type: :number, step: "any" %>
   </div>
 
-  <div class="field">
-    <%= form.collection_select(:group_id, Group.all, :id, :name, { include_blank: "Select group" }, { class: "form-input", required: true }) %>
+  <div class="field ">
+    <%= form.collection_select(:group_id, Group.all, :id, :name, { include_blank: "Select group" }, { class: "form-input-collection", required: true }) %>
 
   </div>  
 
-  <%= form.submit 'Save', class: 'btn btn-primary' %>
+  <%= form.submit 'Save', class: "submit-button" %>
 <% end %>
 
-<%= button_to "back", user_group_path(current_user, @group), :method => :get %>
+
+<%= link_to user_group_path(current_user,  @group), method: :get, class: 'back-button' do %>
+  <i class='fas fa-arrow-left'></i> 
+<% end %>
+
+</div>
+</div>

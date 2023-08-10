@@ -32,6 +32,7 @@ h2{
     width: 100%;
     padding: 1rem;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
     /* margin-bottom: 1rem; */
    
 }
@@ -86,3 +87,20 @@ a{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
+
+.form-input-collection {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .form-input-collection:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
