@@ -5,7 +5,7 @@
 
 <%= form_with(class: "forms", model: [current_user, Group.new], url: user_groups_path(current_user), local: true) do |form| %>
   
-  <div class="field icon-input">
+  <div class="field-icon icon-input">
     
     <% GroupIconOptions::ICON_OPTIONS.each do |icon| %>
       <%= form.radio_button :icon, icon %>
