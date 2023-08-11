@@ -16,10 +16,6 @@
   align-items: center;
 }
 
-.amount {
-  border: groove;
-}
-
 .amount p {
   margin: 0;
   padding: 1rem;
@@ -47,8 +43,8 @@
   justify-content: center;
 }
 
-.wrap-name-icon h2{
-    padding-right: 12px;
+.wrap-name-icon h2 {
+  padding-right: 12px;
 }
 
 .icon-image-transaction {
@@ -83,14 +79,15 @@ hr {
   background-color: #3778c2; /* Set the color of the line */
 }
 
-.no-transactions{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
+.no-transactions {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-.amount{
-    display: flex;
-    justify-content: flex-end;
+.amount {
+  display: flex;
+  justify-content: flex-end;
+  border: groove;
 }
