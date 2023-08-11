@@ -60,7 +60,6 @@ development:
 test:
   <<: *default
   database: CostCutApp_test
-  database: costcut_app_dev
   username: postgres
   password: 1234
 
@@ -86,6 +85,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: costcut_app_prod
   username: postgres
   password: 1234

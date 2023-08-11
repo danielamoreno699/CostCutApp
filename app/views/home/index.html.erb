@@ -1,0 +1,21 @@
+<!-- app/views/home/index.html.erb -->
+ <%= stylesheet_link_tag 'homepage' %>
+
+ <div class="home-page-container pattern-top">
+ <div class="bg"></div>
+
+<div class= "account-container">
+<div class="logo">
+ <h1 class="h1-logo"> Cost Cut App </h1>
+</div>
+
+<div class="log-account">
+  <ul class="nav-ul">
+    <%= link_to "Sign Up", new_user_registration_path, class: "nav-li sign-up-btn" %>
+    <%= link_to "Sign In", new_user_session_path, class: "nav-li" %>
+  </ul>
+</div>
+
+
+</div>
+</div>

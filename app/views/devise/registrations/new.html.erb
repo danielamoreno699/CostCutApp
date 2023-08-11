@@ -1,0 +1,37 @@
+<%= stylesheet_link_tag 'forms' %>
+
+<div class="form-registration">
+<h2>Sign up</h2>
+
+<div class="form-cont">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "your name" %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "your@example.com" %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "password(min 6 characters)" %>
+  </div>
+
+  <div class="field">
+  
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password" %>
+  </div>
+
+  <div class="actions sign-up-btn">
+    <%= f.submit "Sign up", class: "submit-button" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
