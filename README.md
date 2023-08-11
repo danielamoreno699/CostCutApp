@@ -167,6 +167,6 @@ We extend our heartfelt gratitude to the Microverse Team and our valued partners
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
