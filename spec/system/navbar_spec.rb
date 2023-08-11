@@ -10,7 +10,6 @@ RSpec.describe 'Navbar', type: :system do
     driven_by(:rack_test)
   end
 
-
   it 'displays logo-app' do
     visit user_groups_path(user_id: @user.id)
     expect(page).to have_css('.logo-app')
